@@ -1,7 +1,7 @@
 {
     "name": "@monstermann/eslint-config",
     "type": "module",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "Personal ESLint config based on antfu/eslint-config",
     "author": "Michael Ostermann <michaelostermann@me.com>",
     "license": "MIT",
