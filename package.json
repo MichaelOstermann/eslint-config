@@ -2,8 +2,18 @@
     "name": "@monstermann/eslint-config",
     "type": "module",
     "version": "0.0.0",
+    "description": "Personal ESLint config based on antfu/eslint-config",
     "author": "Michael Ostermann <michaelostermann@me.com>",
     "license": "MIT",
+    "homepage": "https://github.com/MichaelOstermann/eslint-config#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/MichaelOstermann/eslint-config.git"
+    },
+    "bugs": {
+        "url": "https://github.com/MichaelOstermann/eslint-config/issues"
+    },
+    "keywords": [],
     "exports": {
         ".": {
             "types": "./dist/index.d.ts",
@@ -14,7 +24,7 @@
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "files": [
-        "./dist/**"
+        "dist"
     ],
     "scripts": {
         "release": "bunx bumpp --no-push && bun publish --access public",
