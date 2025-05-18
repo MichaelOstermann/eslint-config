@@ -1,0 +1,40 @@
+import { defineConfig, globalIgnores } from "eslint/config"
+import type { Options } from "../types.js"
+
+export function setupIgnores(options?: Options) {
+    return defineConfig(globalIgnores([
+        "**/node_modules",
+        "**/dist",
+        "**/package-lock.json",
+        "**/yarn.lock",
+        "**/pnpm-lock.yaml",
+        "**/bun.lockb",
+        "**/bun.lock",
+        "**/output",
+        "**/coverage",
+        "**/temp",
+        "**/.temp",
+        "**/tmp",
+        "**/.tmp",
+        "**/.history",
+        "**/.vitepress/cache",
+        "**/.nuxt",
+        "**/.next",
+        "**/.svelte-kit",
+        "**/.vercel",
+        "**/.changeset",
+        "**/.idea",
+        "**/.cache",
+        "**/.output",
+        "**/.vite-inspect",
+        "**/.yarn",
+        "**/vite.config.*.timestamp-*",
+        "**/CHANGELOG*.md",
+        "**/*.min.*",
+        "**/LICENSE*",
+        "**/__snapshots__",
+        "**/auto-import?(s).d.ts",
+        "**/components.d.ts",
+        ...(options?.ignores ?? []),
+    ]))
+}
