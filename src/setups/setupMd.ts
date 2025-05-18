@@ -14,7 +14,6 @@ export function setupMd() {
             "format/prettier": ["error", {
                 parser: "markdown",
                 tabWidth: 4,
-                proseWrap: "always",
             }],
         },
     })
