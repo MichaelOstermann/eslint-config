@@ -27,7 +27,7 @@
         "dist"
     ],
     "scripts": {
-        "release": "bun run check && bunx bumpp --no-push && tsdown && bun publish --access public",
+        "release": "bun run check && bunx bumpp --no-push && bun run tsdown && bun publish --access public",
         "check": "bun run eslint && bun run tsc"
     },
     "dependencies": {
