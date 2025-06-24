@@ -1,12 +1,20 @@
+import jsonc from "eslint-plugin-jsonc"
 import { defineConfig } from "eslint/config"
 
 export function tsconfig() {
     return defineConfig({
-        files: ["**/tsconfig.json", "**/tsconfig.*.json"],
+        files: [
+            "**/tsconfig.json",
+            "**/tsconfig.*.json",
+        ],
+        plugins: {
+            jsonc: jsonc as any,
+        },
         rules: {
             "jsonc/sort-keys": [
                 "error",
                 {
+                    pathPattern: "^$",
                     order: [
                         "extends",
                         "compilerOptions",
@@ -15,9 +23,9 @@ export function tsconfig() {
                         "include",
                         "exclude",
                     ],
-                    pathPattern: "^$",
                 },
                 {
+                    pathPattern: "^compilerOptions$",
                     order: [
                         /* Projects */
                         "incremental",
@@ -119,7 +127,6 @@ export function tsconfig() {
                         "skipDefaultLibCheck",
                         "skipLibCheck",
                     ],
-                    pathPattern: "^compilerOptions$",
                 },
             ],
         },

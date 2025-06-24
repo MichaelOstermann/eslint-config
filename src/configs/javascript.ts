@@ -1,8 +1,9 @@
 import { defineConfig } from "eslint/config"
-import { isInEditor } from "../constants.js"
+import { GLOB_SRC, isInEditor } from "../constants.js"
 
 export function javascript() {
     return defineConfig({
+        files: [GLOB_SRC],
         rules: {
             "accessor-pairs": ["error", { enforceForClassMembers: true, setWithoutGet: true }],
             "array-callback-return": "error",
@@ -48,24 +49,6 @@ export function javascript() {
             "no-proto": "error",
             "no-prototype-builtins": "error",
             "no-regex-spaces": "error",
-            "no-restricted-globals": [
-                "error",
-                { message: "Use `globalThis` instead.", name: "global" },
-                { message: "Use `globalThis` instead.", name: "self" },
-            ],
-            "no-restricted-properties": [
-                "error",
-                { message: "Use `Object.getPrototypeOf` or `Object.setPrototypeOf` instead.", property: "__proto__" },
-                { message: "Use `Object.defineProperty` instead.", property: "__defineGetter__" },
-                { message: "Use `Object.defineProperty` instead.", property: "__defineSetter__" },
-                { message: "Use `Object.getOwnPropertyDescriptor` instead.", property: "__lookupGetter__" },
-                { message: "Use `Object.getOwnPropertyDescriptor` instead.", property: "__lookupSetter__" },
-            ],
-            "no-restricted-syntax": [
-                "error",
-                "TSEnumDeclaration[const=true]",
-                "TSExportAssignment",
-            ],
             "no-self-assign": ["error", { props: true }],
             "no-self-compare": "error",
             "no-sequences": "error",
@@ -85,6 +68,35 @@ export function javascript() {
             "no-useless-computed-key": "error",
             "no-useless-rename": "error",
             "no-useless-return": "error",
+            "one-var": ["error", { initialized: "never" }],
+            "prefer-exponentiation-operator": "error",
+            "prefer-promise-reject-errors": "error",
+            "prefer-regex-literals": ["error", { disallowRedundantWrapping: true }],
+            "prefer-template": "error",
+            "symbol-description": "error",
+            "unicode-bom": ["error", "never"],
+            "use-isnan": ["error", { enforceForIndexOf: true, enforceForSwitchCase: true }],
+            "valid-typeof": ["error", { requireStringLiterals: true }],
+            "vars-on-top": "error",
+            "yoda": ["error", "never"],
+            "no-restricted-globals": [
+                "error",
+                { message: "Use `globalThis` instead.", name: "global" },
+                { message: "Use `globalThis` instead.", name: "self" },
+            ],
+            "no-restricted-properties": [
+                "error",
+                { message: "Use `Object.getPrototypeOf` or `Object.setPrototypeOf` instead.", property: "__proto__" },
+                { message: "Use `Object.defineProperty` instead.", property: "__defineGetter__" },
+                { message: "Use `Object.defineProperty` instead.", property: "__defineSetter__" },
+                { message: "Use `Object.getOwnPropertyDescriptor` instead.", property: "__lookupGetter__" },
+                { message: "Use `Object.getOwnPropertyDescriptor` instead.", property: "__lookupSetter__" },
+            ],
+            "no-restricted-syntax": [
+                "error",
+                "TSEnumDeclaration[const=true]",
+                "TSExportAssignment",
+            ],
             "object-shorthand": [
                 "error",
                 "always",
@@ -93,7 +105,6 @@ export function javascript() {
                     ignoreConstructors: false,
                 },
             ],
-            "one-var": ["error", { initialized: "never" }],
             "prefer-arrow-callback": [
                 "error",
                 {
@@ -108,16 +119,6 @@ export function javascript() {
                     ignoreReadBeforeAssign: true,
                 },
             ],
-            "prefer-exponentiation-operator": "error",
-            "prefer-promise-reject-errors": "error",
-            "prefer-regex-literals": ["error", { disallowRedundantWrapping: true }],
-            "prefer-template": "error",
-            "symbol-description": "error",
-            "unicode-bom": ["error", "never"],
-            "use-isnan": ["error", { enforceForIndexOf: true, enforceForSwitchCase: true }],
-            "valid-typeof": ["error", { requireStringLiterals: true }],
-            "vars-on-top": "error",
-            "yoda": ["error", "never"],
         },
     })
 }

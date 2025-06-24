@@ -1,21 +1,19 @@
+import jsonc from "eslint-plugin-jsonc"
 import { defineConfig } from "eslint/config"
-import jsoncParser from "jsonc-eslint-parser"
-import jsoncPlugin from "eslint-plugin-jsonc"
+import { GLOB_JSON } from "../constants.js"
 
-export function setupJsonc() {
+export function json() {
     return defineConfig({
-        files: [
-            "**/*.json",
-            "**/*.json5",
-            "**/*.jsonc",
-        ],
-        languageOptions: {
-            parser: jsoncParser,
-        },
+        files: GLOB_JSON,
         plugins: {
-            jsonc: jsoncPlugin as any,
+            jsonc: jsonc as any,
         },
         rules: {
+            "jsonc/array-bracket-spacing": ["error", "never"],
+            "jsonc/comma-dangle": ["error", "never"],
+            "jsonc/comma-style": ["error", "last"],
+            "jsonc/indent": ["error", 4],
+            "jsonc/key-spacing": ["error", { afterColon: true, beforeColon: false }],
             "jsonc/no-bigint-literals": "error",
             "jsonc/no-binary-expression": "error",
             "jsonc/no-binary-numeric-literals": "error",
@@ -39,19 +37,14 @@ export function setupJsonc() {
             "jsonc/no-undefined-value": "error",
             "jsonc/no-unicode-codepoint-escapes": "error",
             "jsonc/no-useless-escape": "error",
-            "jsonc/space-unary-ops": "error",
-            "jsonc/valid-json-number": "error",
-            "jsonc/vue-custom-block/no-parsing-error": "error",
-            "jsonc/array-bracket-spacing": ["error", "never"],
-            "jsonc/comma-dangle": ["error", "never"],
-            "jsonc/comma-style": ["error", "last"],
-            "jsonc/indent": ["error", 4],
-            "jsonc/key-spacing": ["error", { afterColon: true, beforeColon: false }],
             "jsonc/object-curly-newline": ["error", { consistent: true, multiline: true }],
             "jsonc/object-curly-spacing": ["error", "always"],
             "jsonc/object-property-newline": ["error", { allowMultiplePropertiesPerLine: true }],
             "jsonc/quote-props": "error",
             "jsonc/quotes": "error",
+            "jsonc/space-unary-ops": "error",
+            "jsonc/valid-json-number": "error",
+            "jsonc/vue-custom-block/no-parsing-error": "error",
         },
     })
 }

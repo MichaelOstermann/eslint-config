@@ -1,9 +1,9 @@
-import { defineConfig } from "eslint/config"
 import format from "eslint-plugin-format"
+import { defineConfig } from "eslint/config"
 
-export function setupHtml() {
+export function css() {
     return defineConfig({
-        files: ["**/*.html"],
+        files: ["**/*.css"],
         languageOptions: {
             parser: format.parserPlain,
         },
@@ -12,7 +12,7 @@ export function setupHtml() {
         },
         rules: {
             "format/prettier": ["error", {
-                parser: "html",
+                parser: "css",
                 tabWidth: 4,
             }],
         },

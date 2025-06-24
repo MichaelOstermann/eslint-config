@@ -1,18 +1,12 @@
 import { isPackageExists } from "local-pkg"
 
-export const tsFiles = [
-    "**/*.ts",
-    "**/*.js",
-]
+export const GLOB_SRC = "**/*.[jt]s?(x)"
+export const GLOB_REACT = "**/*.[jt]sx"
 
-export const tsxFiles = [
-    "**/*.tsx",
-    "**/*.jsx",
-]
-
-export const allFiles = [
-    ...tsFiles,
-    ...tsxFiles,
+export const GLOB_JSON = [
+    "**/*.json",
+    "**/*.json5",
+    "**/*.jsonc",
 ]
 
 export const isInEditor = !process.env["CI"]

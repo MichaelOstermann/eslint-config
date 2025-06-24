@@ -1,7 +1,7 @@
-import { defineConfig } from "eslint/config"
 import format from "eslint-plugin-format"
+import { defineConfig } from "eslint/config"
 
-export function setupMd() {
+export function markdown() {
     return defineConfig({
         files: ["**/*.md"],
         languageOptions: {
@@ -13,6 +13,7 @@ export function setupMd() {
         rules: {
             "format/prettier": ["error", {
                 parser: "markdown",
+                semicolons: false,
                 tabWidth: 4,
             }],
         },

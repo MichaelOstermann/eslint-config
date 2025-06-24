@@ -1,8 +1,12 @@
+import jsonc from "eslint-plugin-jsonc"
 import { defineConfig } from "eslint/config"
 
 export function packageJson() {
     return defineConfig({
         files: ["**/package.json"],
+        plugins: {
+            jsonc: jsonc as any,
+        },
         rules: {
             "jsonc/sort-array-values": [
                 "error",
@@ -14,6 +18,7 @@ export function packageJson() {
             "jsonc/sort-keys": [
                 "error",
                 {
+                    pathPattern: "^$",
                     order: [
                         "publisher",
                         "name",
@@ -61,7 +66,6 @@ export function packageJson() {
                         "lint-staged",
                         "eslintConfig",
                     ],
-                    pathPattern: "^$",
                 },
                 {
                     order: { type: "asc" },
@@ -72,15 +76,16 @@ export function packageJson() {
                     pathPattern: "^(?:resolutions|overrides|pnpm.overrides)$",
                 },
                 {
+                    pathPattern: "^exports.*$",
                     order: [
                         "types",
                         "import",
                         "require",
                         "default",
                     ],
-                    pathPattern: "^exports.*$",
                 },
                 {
+                    pathPattern: "^(?:gitHooks|husky|simple-git-hooks)$",
                     order: [
                         // client hooks only
                         "pre-commit",
@@ -94,7 +99,6 @@ export function packageJson() {
                         "pre-push",
                         "pre-auto-gc",
                     ],
-                    pathPattern: "^(?:gitHooks|husky|simple-git-hooks)$",
                 },
             ],
         },

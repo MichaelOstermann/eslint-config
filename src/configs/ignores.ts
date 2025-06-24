@@ -1,7 +1,7 @@
-import { defineConfig, globalIgnores } from "eslint/config"
 import type { Options } from "../types.js"
+import { defineConfig, globalIgnores } from "eslint/config"
 
-export function setupIgnores(options?: Options) {
+export function ignores(options: Options) {
     return defineConfig(globalIgnores([
         "**/node_modules",
         "**/dist",
@@ -35,6 +35,6 @@ export function setupIgnores(options?: Options) {
         "**/__snapshots__",
         "**/auto-import?(s).d.ts",
         "**/components.d.ts",
-        ...(options?.ignores ?? []),
+        ...options.ignores ?? [],
     ]))
 }

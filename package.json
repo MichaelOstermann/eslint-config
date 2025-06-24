@@ -27,8 +27,8 @@
         "dist"
     ],
     "scripts": {
-        "release": "bun run check && bunx bumpp --no-push && bun run tsdown && bun publish --access public",
-        "check": "bun run eslint && bun run tsc"
+        "release": "bun run checks && bunx bumpp --no-push && bun run tsdown && bun publish --access public",
+        "checks": "bun run eslint && bun run tsc"
     },
     "dependencies": {
         "@eslint-community/eslint-plugin-eslint-comments": "^4.5.0",
@@ -52,12 +52,13 @@
         "eslint-plugin-unused-imports": "^4.1.4",
         "globals": "^16.1.0",
         "jsonc-eslint-parser": "^2.4.0",
-        "local-pkg": "^1.1.1",
         "prettier": "^3.5.3"
     },
     "devDependencies": {
         "@sindresorhus/tsconfig": "^7.0.0",
         "@types/node": "^22.15.18",
+        "@types/react": "^19.1.6",
+        "react": "^19.1.0",
         "tsdown": "^0.11.11",
         "typescript": "^5.8.3"
     }

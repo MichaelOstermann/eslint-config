@@ -1,10 +1,10 @@
-import { defineConfig } from "eslint/config"
-import { allFiles } from "../constants.js"
 import unicornPlugin from "eslint-plugin-unicorn"
+import { defineConfig } from "eslint/config"
+import { GLOB_SRC } from "../constants.js"
 
 export function unicorn() {
     return defineConfig({
-        files: allFiles,
+        files: [GLOB_SRC],
         plugins: {
             unicorn: unicornPlugin,
         },

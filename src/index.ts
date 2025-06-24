@@ -1,50 +1,51 @@
-import { comments } from "./plugins/comments.js"
-import { javascript } from "./plugins/javascript.js"
-import { react } from "./plugins/react.js"
-import { regexp } from "./plugins/regexp.js"
-import { typescript } from "./plugins/typescript.js"
-import { setupIgnores } from "./setups/setupIgnores.js"
-import { setupTs } from "./setups/setupTs.js"
-import { setupTsx } from "./setups/setupTsx.js"
-import { antfu } from "./plugins/antfu.js"
-import { stylistic } from "./plugins/stylistic.js"
-import { unicorn } from "./plugins/unicorn.js"
-import { setupJsonc } from "./setups/setupJsonc.js"
-import { jsdoc } from "./plugins/jsdoc.js"
-import { packageJson } from "./plugins/packageJson.js"
-import { tsconfig } from "./plugins/tsconfig.js"
-import { defineConfig } from "eslint/config"
-import { tailwind } from "./plugins/tailwind.js"
 import type { Options } from "./types.js"
-import { setupCss } from "./setups/setupCss.js"
-import { setupHtml } from "./setups/setupHtml.js"
-import { setupMd } from "./setups/setupMd.js"
+import { defineConfig } from "eslint/config"
+import { antfu } from "./configs/antfu.js"
+import { comments } from "./configs/comments.js"
+import { css } from "./configs/css.js"
+import { disables } from "./configs/disables.js"
+import { html } from "./configs/html.js"
+import { ignores } from "./configs/ignores.js"
+import { imports } from "./configs/imports.js"
+import { javascript } from "./configs/javascript.js"
+import { jsdoc } from "./configs/jsdoc.js"
+import { json } from "./configs/json.js"
+import { markdown } from "./configs/markdown.js"
+import { packageJson } from "./configs/packageJson.js"
+import { parsers } from "./configs/parsers.js"
+import { perfectionist } from "./configs/perfectionist.js"
+import { react } from "./configs/react.js"
+import { regex } from "./configs/regex.js"
+import { stylistic } from "./configs/stylistic.js"
+import { tailwind } from "./configs/tailwind.js"
+import { tsconfig } from "./configs/tsconfig.js"
+import { typescript } from "./configs/typescript.js"
+import { unicorn } from "./configs/unicorn.js"
 
-export default function (options?: Options) {
+export default function (options: Options = {}) {
     return Promise
         .all([
-            react(),
-            tailwind(),
-        ])
-        .then(([react, tailwind]) => defineConfig(
-            setupIgnores(options),
-            setupTs(),
-            setupTsx(),
-            setupJsonc(),
-            setupHtml(),
-            setupCss(),
-            setupMd(),
-            react,
-            tailwind,
-            typescript(),
+            ignores(options),
+            parsers(),
             javascript(),
-            comments(),
-            regexp(),
-            stylistic(),
+            typescript(),
             antfu(),
-            unicorn(),
+            comments(),
+            css(),
+            html(),
+            imports(),
             jsdoc(),
+            json(),
+            markdown(),
             packageJson(),
+            regex(),
+            stylistic(),
+            perfectionist(),
+            react(options),
+            tailwind(options),
             tsconfig(),
-        ))
+            unicorn(),
+            disables(),
+        ])
+        .then(defineConfig)
 }
