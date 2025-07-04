@@ -80,8 +80,9 @@ export function perfectionist() {
                 type: "natural",
                 groups: [
                     "unknown",
-                    "multiline-property",
+                    "property",
                     "method",
+                    "multiline-property",
                     "multiline-method",
                 ],
             }],
