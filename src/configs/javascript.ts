@@ -16,7 +16,6 @@ export function javascript() {
             "no-caller": "error",
             "no-case-declarations": "error",
             "no-compare-neg-zero": "error",
-            "no-cond-assign": ["error", "always"],
             "no-console": ["error", { allow: ["warn", "error"] }],
             "no-control-regex": "error",
             "no-debugger": "error",
