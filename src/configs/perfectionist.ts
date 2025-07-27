@@ -38,7 +38,6 @@ export function perfectionist() {
                 newlinesBetween: "ignore",
                 order: "asc",
                 partitionByComment: true,
-                partitionByNewLine: true,
                 type: "natural",
                 groups: [
                     "index-signature",
@@ -62,7 +61,6 @@ export function perfectionist() {
                 newlinesBetween: "ignore",
                 order: "asc",
                 partitionByComment: true,
-                partitionByNewLine: true,
                 type: "natural",
                 groups: [
                     "index-signature",
@@ -76,7 +74,6 @@ export function perfectionist() {
                 newlinesBetween: "ignore",
                 order: "asc",
                 partitionByComment: true,
-                partitionByNewLine: true,
                 type: "natural",
                 groups: [
                     "unknown",
