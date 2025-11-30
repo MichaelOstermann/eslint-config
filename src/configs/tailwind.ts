@@ -11,15 +11,15 @@ export async function tailwind(options: Options) {
     return defineConfig({
         files: [GLOB_SRC],
         plugins: {
-            tailwind: tailwindPlugin,
+            tailwindcss: tailwindPlugin,
         },
         rules: {
-            ...tailwindPlugin.configs["flat/recommended"].rules,
+            ...tailwindPlugin.configs["flat/recommended"].at(1).rules,
             "tailwindcss/no-custom-classname": "off",
         },
         settings: {
             tailwindcss: {
-                callees: ["tv", "twJoin", "twMerge"],
+                callees: ["twJoin", "twMerge"],
             },
         },
     })
