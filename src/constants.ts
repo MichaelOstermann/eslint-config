@@ -1,5 +1,3 @@
-import { isPackageExists } from "local-pkg"
-
 export const GLOB_SRC = "**/*.[jt]s?(x)"
 export const GLOB_REACT = "**/*.[jt]sx"
 
@@ -18,6 +16,3 @@ export const isInEditor = !process.env["CI"]
         || !!process.env["JETBRAINS_IDE"]
         || !!process.env["VIM"]
         || !!process.env["NVIM"])
-
-export const hasReact = isPackageExists("react")
-export const hasTailwind = isPackageExists("tailwindcss")
