@@ -1,9 +1,6 @@
 {
-    "extends": "@sindresorhus/tsconfig",
-    "compilerOptions": {
-        "jsx": "react-jsx",
-        "outDir": "dist"
-    },
+    "extends": "@monstermann/tsconfig",
+    "compilerOptions": {},
     "exclude": [
         "**/dist/**",
         "**/node_modules/**",

@@ -17,6 +17,9 @@ export function stylistic() {
             }).rules,
             "@stylistic/generator-star-spacing": ["error", { after: true, before: false }],
             "@stylistic/yield-star-spacing": ["error", { after: true, before: false }],
+            "@stylistic/operator-linebreak": ["error", "before", { overrides: {
+                "=": "after",
+            } }],
         },
     })
 }

@@ -22,7 +22,7 @@ export async function react(options: Options) {
         {
             files: [GLOB_SRC],
             extends: [
-                reactHooksPlugin.configs["recommended-latest"],
+                reactHooksPlugin.configs.flat["recommended-latest"],
                 reactCompilerPlugin.configs.recommended,
             ],
             rules: {
