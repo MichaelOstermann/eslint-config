@@ -3,23 +3,23 @@ import { defineConfig } from "eslint/config"
 import { GLOB_SRC } from "../constants.js"
 
 export async function tailwind(options: Options) {
-    if (options.tailwind !== true) return []
+    if (!options.tailwind) return []
 
-    // @ts-expect-error No declaration files available.
-    const tailwindPlugin = await import("eslint-plugin-tailwindcss").then(m => m.default)
+    const betterTailwindcss = await import("eslint-plugin-better-tailwindcss").then(m => m.default)
 
     return defineConfig({
         files: [GLOB_SRC],
         plugins: {
-            tailwindcss: tailwindPlugin,
+            "better-tailwindcss": betterTailwindcss,
         },
         rules: {
-            ...tailwindPlugin.configs["flat/recommended"].at(1).rules,
-            "tailwindcss/no-custom-classname": "off",
+            ...betterTailwindcss.configs["recommended"].rules,
+            "better-tailwindcss/enforce-consistent-line-wrapping": "off",
+            "better-tailwindcss/no-unknown-classes": "off",
         },
         settings: {
-            tailwindcss: {
-                callees: ["twJoin", "twMerge"],
+            "better-tailwindcss": {
+                entryPoint: options.tailwind,
             },
         },
     })

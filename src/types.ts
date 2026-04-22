@@ -1,5 +1,5 @@
 export interface Options {
     ignores?: string[]
     react?: boolean
-    tailwind?: boolean
+    tailwind?: string
 }
