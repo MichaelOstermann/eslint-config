@@ -1,7 +1,7 @@
 import typescriptParser from "@typescript-eslint/parser"
 import { defineConfig } from "eslint/config"
 import globals from "globals"
-import jsoncParser from "jsonc-eslint-parser"
+import * as jsoncParser from "jsonc-eslint-parser"
 import { GLOB_JSON, GLOB_REACT, GLOB_SRC } from "../constants.js"
 
 export function parsers() {

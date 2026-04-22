@@ -1,4 +1,3 @@
-// @ts-expect-error No declaration files available.
 import commentsPlugin from "@eslint-community/eslint-plugin-eslint-comments"
 import { defineConfig } from "eslint/config"
 import { GLOB_SRC } from "../constants.js"
