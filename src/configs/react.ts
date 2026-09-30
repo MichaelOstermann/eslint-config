@@ -26,8 +26,6 @@ export async function react(options: Options) {
                 reactCompilerPlugin.configs.recommended,
             ],
             rules: {
-                "@eslint-react/hooks-extra/no-unnecessary-use-prefix": "off",
-                "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": "off",
             },
         },
         {
