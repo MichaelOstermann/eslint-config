@@ -20,6 +20,7 @@ export function typescript() {
             "@typescript-eslint/no-extraneous-class": "off",
             "@typescript-eslint/no-import-type-side-effects": "error",
             "@typescript-eslint/no-invalid-void-type": "off",
+            "@typescript-eslint/no-namespace": "off",
             "@typescript-eslint/no-non-null-assertion": "off",
             "@typescript-eslint/no-redeclare": ["error", { builtinGlobals: false }],
             "@typescript-eslint/no-require-imports": "error",
