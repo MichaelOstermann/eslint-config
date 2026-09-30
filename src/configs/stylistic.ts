@@ -16,6 +16,7 @@ export function stylistic() {
                 semi: false,
             }).rules,
             "@stylistic/generator-star-spacing": ["error", { after: true, before: false }],
+            "@stylistic/max-statements-per-line": ["error", { ignoredNodes: ["TryStatement"], max: 1 }],
             "@stylistic/yield-star-spacing": ["error", { after: true, before: false }],
             "@stylistic/operator-linebreak": ["error", "before", { overrides: {
                 "=": "after",
