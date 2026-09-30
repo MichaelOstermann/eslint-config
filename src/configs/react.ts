@@ -26,6 +26,7 @@ export async function react(options: Options) {
                 reactCompilerPlugin.configs.recommended,
             ],
             rules: {
+                "react-hooks/set-state-in-effect": "off",
             },
         },
         {
@@ -40,6 +41,7 @@ export async function react(options: Options) {
             rules: {
                 "@eslint-react/no-array-index-key": "off",
                 "@eslint-react/no-unstable-context-value": "off",
+                "@eslint-react/set-state-in-effect": "off",
                 "@stylistic/jsx-max-props-per-line": ["error", { maximum: { multi: 1, single: 2 } }],
             },
         },
