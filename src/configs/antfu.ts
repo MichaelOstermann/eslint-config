@@ -13,8 +13,6 @@ export function antfu() {
             "antfu/consistent-list-newline": "error",
             "antfu/curly": "error",
             "antfu/import-dedupe": "error",
-            "antfu/no-import-dist": "error",
-            "antfu/no-import-node-modules-by-path": "error",
             "antfu/top-level-function": "error",
         },
     })
